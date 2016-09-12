@@ -1,7 +1,7 @@
 do
 
 local function run(msg, matches)
-  if matches[1] == "dl" and matches[2] and matches[3] then
+  if matches[1] == "show" and matches[2] and matches[3] then
     if is_sudo(msg) then
 	    local file = "./"..matches[2].."/"..matches[3]..""
       local receiver = get_receiver(msg)
@@ -12,7 +12,7 @@ end
 
 return {
   patterns = {
-  "^[!#/](dl) (.*) (.*)$"
+  "^[!#/](show) (.*) (.*)$"
   },
   run = run
 }
